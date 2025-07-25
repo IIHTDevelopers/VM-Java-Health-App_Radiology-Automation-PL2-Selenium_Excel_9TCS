@@ -133,10 +133,10 @@ public class radiology_testcase extends AppTestBase {
 		radiology_pageInstance = new radiology_page(driver);
 
 		LocalDate currentDate = LocalDate.now();
-		LocalDate date7DaysAgo = currentDate.minusDays(50);
+		LocalDate dateToFilter = LocalDate.of(2020, 1, 1);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		String toDate = currentDate.format(formatter);
-		String fromDate = date7DaysAgo.format(formatter);
+		String fromDate = dateToFilter.format(formatter);
 
 		System.out.println("From Date : " + fromDate + ", To Date : " + toDate);
 		Assert.assertTrue(radiology_pageInstance.verifyDatesAreRememberedCorrectly(fromDate, toDate));
